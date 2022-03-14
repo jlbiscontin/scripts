@@ -1,7 +1,7 @@
 # VPN server config backup v2, run @ Veeam server!
 
 # NOTAS:
-# Como call Task: -NonInteractive -NoLogo -ExecutionPolicy Bypass -File "C:\VPN_BKP_v2.ps1" -ID "229" -IP "172.16.10.251" -Port "5555"
+# Como call Task: -NonInteractive -NoLogo -ExecutionPolicy Bypass -File "C:\VPN_BKP_v2.ps1" -ID "229" -IP "172.16.10.1" -Port "5555"
 
 
 # Declare variables, first the ones required to pass when calling the script!
@@ -14,7 +14,7 @@ param(
     [string] $Port
 )
 $Server = $IP + ':' + $Port
-$Pass = 'Ts0f74dm1nVPN'
+$Pass = 'softetherserverpass'
 $DestDisk = 'R:\Backups\VPNs\'
 
 
