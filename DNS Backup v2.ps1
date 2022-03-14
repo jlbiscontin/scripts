@@ -4,10 +4,10 @@
 # Copy-Item -FromSession REQUIRES PS 5.0+ on both sides! (I'm looking at you 2012r2...)
 # Si esta fuera de dominio, antes de ejecutar el script agregar el PSSession hostname a los TrustedHosts
 # del equipo en el cual se ejecutara el script (ej: en el server Veeam 2012r2std-64)
-# Set-Item WSMan:\localhost\Client\TrustedHosts -Value 'SRVCLOUDTSOFT04.tsoftglobal.com' -Concatenate
-# Y agregar el user a usar (ej: 'TSOFT\svcBKP') al grupo 'Administrators' del server al cual le apuntamos (ej: 'SRVCLOUDTSOFT04')
+# Set-Item WSMan:\localhost\Client\TrustedHosts -Value 'srvname.domain.com' -Concatenate
+# Y agregar el user a usar (ej: 'domain\user') al grupo 'Administrators' del server al cual le apuntamos (ej: 'srvname')
 # Probe loguear via WinRM con el user en el grupo de 'Backup Operators' pero rebota, solo le gusta como 'Administrators'
-# Como call Task: -NonInteractive -NoLogo -ExecutionPolicy Bypass -File "C:\DNS_BKP_v2.ps1" -VM "NS1" -HV "SRVCLOUDTSOFT04.tsoftglobal.com"
+# Como call Task: -NonInteractive -NoLogo -ExecutionPolicy Bypass -File "C:\DNS_BKP_v2.ps1" -VM "NS1" -HV "srvname.domain.com"
 
 
 # Declare variables, first the ones required to pass when calling the script!
@@ -18,8 +18,8 @@ param(
     [string] $HV
 )
 $DestDisk = 'R:\Backups\DNSs\'
-$User = 'TSOFT\svcBKP'
-$Pass = 'Kfe%Mhw$E3Cm88B@'
+$User = 'domain\user'
+$Pass = 'userpass'
 $Cred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, (ConvertTo-SecureString $Pass -AsPlainText -Force)
 
 
