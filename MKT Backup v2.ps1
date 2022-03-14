@@ -14,7 +14,7 @@ param(
     [Parameter(Mandatory, HelpMessage="Enter MikroTik SSH Port.")]
     [string] $Port
 )
-$User = 'svcBKP'
+$User = 'username'
 $DestDisk = 'R:\Backups\MKTs\'
 
 # Destination
