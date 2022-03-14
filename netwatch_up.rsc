@@ -1,6 +1,6 @@
 # Declare variables
-:local host "TGIF-MADE-SRV";
-:local dest "jlbiscontin@yahoo.com,ulisesthomasm@gmail.com";
+:local host "SRV-xxx";
+:local dest "yourname@yourdomain.com,yourname@yourdomain.com";
 
 # Actual code
 /tool e-mail send start-tls=yes \
